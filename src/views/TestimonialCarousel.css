@@ -1,0 +1,196 @@
+.testimonial-section {
+    position: relative;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef3ff 100%);
+    padding: 120px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.6s ease;
+}
+
+/* Card Style */
+.testimonial-card {
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 50px 60px;
+    max-width: 750px;
+    z-index: 2;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.testimonial-section.visible .testimonial-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Quote Icon */
+.quote-icon {
+    font-size: 4rem;
+    color: #0056ff;
+    opacity: 0.2;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 1.1rem;
+    color: #222;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* User Info */
+.testimonial-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.user-img:hover {
+    transform: scale(1.05);
+}
+
+.user-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.rating {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.rating span {
+    color: #777;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #0056ff;
+    transform: scale(1.3);
+}
+
+/* Floating Gradient Orbs */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite alternate;
+}
+
+.orb1 {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle at center, #5b7fff, transparent);
+    top: -60px;
+    left: -60px;
+}
+
+.orb2 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at center, #00b8ff, transparent);
+    bottom: -80px;
+    right: -60px;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    from {transform: translateY(0);}
+    to {transform: translateY(25px);}
+}
+
+/* Arrow Navigation */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    color: #0056ff;
+    width: 45px;
+    height: 45px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.nav-arrow:hover {
+    background: #0056ff;
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 86, 255, 0.3);
+}
+
+.nav-arrow.left {
+    left: 70px;
+}
+
+.nav-arrow.right {
+    right: 70px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .testimonial-section {
+        padding: 90px 60px;
+    }
+
+    .nav-arrow.left {left: 40px;}
+    .nav-arrow.right {right: 40px;}
+}
+
+@media (max-width: 600px) {
+    .testimonial-section {
+        padding: 70px 25px;
+    }
+
+    .nav-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 1.5rem;
+    }
+
+    .nav-arrow.left {left: 15px;}
+    .nav-arrow.right {right: 15px;}
+}

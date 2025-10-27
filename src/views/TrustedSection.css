@@ -1,0 +1,206 @@
+.trusted-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 80px 100px;
+    margin: 60px auto;
+    background: linear-gradient(135deg, #f9fbff 0%, #ffffff 100%);
+    border-radius: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 1300px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trusted-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+}
+
+.trusted-section::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(0, 86, 255, 0.15), transparent 70%);
+    filter: blur(60px);
+    z-index: 0;
+    animation: floatOrb 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb {
+    from { transform: translateY(0px); }
+    to { transform: translateY(20px); }
+}
+
+/* Left Column */
+.trusted-left {
+    flex: 1;
+    max-width: 45%;
+    z-index: 1;
+}
+
+.trusted-left h5 {
+    color: #0056ff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.trusted-left h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.trusted-left p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn-lg {
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 6px 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111 !important;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    font-size: 0.9rem;
+}
+
+.cta-buttons .btn-lg i {
+    font-size: 1rem;
+    margin-right: 6px;
+}
+
+.glow-pulse {
+    box-shadow: 0 0 8px rgba(0, 86, 255, 0.4);
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 8px rgba(0, 86, 255, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(0, 86, 255, 0.8); }
+    100% { box-shadow: 0 0 8px rgba(0, 86, 255, 0.4); }
+}
+
+.cta-buttons .btn-lg:hover {
+    background-color: #0056ff !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 86, 255, 0.25);
+}
+
+/* Right Column */
+.trusted-right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 60px;
+    z-index: 1;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    color: #0056ff;
+    flex-shrink: 0;
+}
+
+.feature h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+.feature p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .trusted-section {
+        flex-direction: column;
+        padding: 60px 50px;
+        margin: 40px 20px;
+    }
+
+    .trusted-left {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .trusted-right {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .trusted-section {
+        padding: 40px 25px;
+        margin: 30px 15px;
+    }
+
+    .trusted-right {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .feature-icon {
+        margin-bottom: 10px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

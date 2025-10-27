@@ -1,0 +1,232 @@
+/* ======== Core Layout ======== */
+.body-section {
+    position: relative;
+    background: linear-gradient(to bottom, #f4f7fb 0%, #ffffff 100%);
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    overflow: hidden;
+    z-index: 0;
+    transition: background 1s ease;
+}
+
+/* ======== Smooth Scroll Offset for Navbar ======== */
+#how-section {
+    scroll-margin-top: 80px;
+}
+
+/* ======== Floating Orbs ======== */
+.floating-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+    animation: float 14s ease-in-out infinite alternate;
+}
+
+.orb1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #0056ff40 0%, transparent 70%);
+    top: 10%;
+    left: -5%;
+}
+
+.orb2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #00b3ff40 0%, transparent 70%);
+    bottom: 15%;
+    right: -10%;
+    animation-delay: 3s;
+}
+
+.orb3 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #0072ff30 0%, transparent 70%);
+    top: 60%;
+    left: 40%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0% {transform: translateY(0) scale(1);}
+    100% {transform: translateY(-25px) scale(1.05);}
+}
+
+/* ======== Section Panels ======== */
+.section-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px 70px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.9s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.section-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-container.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ======== Text Styling ======== */
+.text-block {
+    flex: 1;
+    max-width: 50%;
+}
+
+.text-block h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #0b0b0b;
+    margin-bottom: 15px;
+}
+
+.text-block .intro {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.text-block hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 25px 0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.features li {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.features li::before {
+    content: '✔';
+    color: #0056ff;
+    font-weight: 600;
+}
+
+.features li:hover {
+    transform: translateX(6px);
+    color: #0056ff;
+}
+
+.text-block .outro {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ======== Image Styling ======== */
+.image-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vehicle-img, .app-img {
+    width: 400px;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 86, 255, 0.15);
+}
+
+/* ======== Fade-Up Animation ======== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.visible.fade-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 1024px) {
+    .body-section {
+        padding: 60px 50px;
+    }
+
+    .section-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+    }
+
+    .section-container.reverse {
+        flex-direction: column;
+    }
+
+    .text-block {
+        max-width: 100%;
+    }
+
+    .vehicle-img, .app-img {
+        width: 300px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .body-section {
+        padding: 50px 20px;
+    }
+
+    .section-container {
+        padding: 25px;
+    }
+
+    .text-block h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-block .intro, .text-block .outro {
+        font-size: 1rem;
+    }
+
+    .features li {
+        font-size: 0.95rem;
+    }
+
+    .vehicle-img, .app-img {
+        width: 260px;
+    }
+}
