@@ -69,7 +69,7 @@ const FeedbackSection = () => {
         </div>
       )}
 
-      {/* Footer (glass style, black text, matches Mas Drive design system) */}
+      {/* Footer */}
       <footer className="footer-glass">
         <div className="footer-inner">
           <div className="footer-column footer-brand">
@@ -88,16 +88,16 @@ const FeedbackSection = () => {
 
           <div className="footer-column">
             <h4>CONNECT WITH US</h4>
-            <p><a href="#">Whatsapp</a></p>
-            <p><a href="#">Twitter (X)</a></p>
-            <p><a href="#">Facebook</a></p>
-            <p><a href="#">Instagram</a></p>
+            <p><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Whatsapp</a></p>
+            <p><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Twitter (X)</a></p>
+            <p><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+            <p><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
           </div>
 
           <div className="footer-column">
             <h4>DOWNLOAD</h4>
-            <p><a href="#">iOS</a></p>
-            <p><a href="#">Android</a></p>
+            <p><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">iOS</a></p>
+            <p><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Android</a></p>
           </div>
         </div>
 
